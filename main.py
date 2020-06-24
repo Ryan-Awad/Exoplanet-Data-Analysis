@@ -3,7 +3,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 
-planets = pd.read_csv("planets.csv", sep=',')
+dataset = input("Dataset: ")
+x_value = input("X: ")
+y_value = input("Y: ")
+
+planets = pd.read_csv(dataset, sep=',')
 sns.set(style="ticks")
 
 f, ax = plt.subplots(figsize=(7, 6))
@@ -13,13 +17,12 @@ ax.set_xscale("log") # you can use "log" which increments the x-axis by multiply
 #planets = sns.load_dataset("planets")
 
 # replace pl_pnum and st_mass with other column names
-sns.boxplot(x="st_dist", y="pl_discmethod", data=planets) 
+sns.boxplot(x=x_value, y=y_value, data=planets) 
 
 # Add in points to show each observation
-sns.swarmplot(x="st_dist", y="pl_discmethod", data=planets, size=2, color=".3", linewidth=0)
+sns.swarmplot(x=x_value, y=y_value, data=planets, color=".3", size=2, linewidth=0)
 # Tweak the visual presentation
 
 ax.xaxis.grid(True)
-ax.set(ylabel="")
 sns.despine(trim=True, left=True)
 plt.show()
