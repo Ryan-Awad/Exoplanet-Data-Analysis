@@ -1,4 +1,3 @@
-import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -7,7 +6,7 @@ dataset = input("Dataset: ")
 x_value = input("X: ")
 y_value = input("Y: ")
 
-planets = pd.read_csv(dataset, sep=',')
+planets = pd.read_csv("datasets/" + dataset, sep=',')
 sns.set(style="ticks")
 
 f, ax = plt.subplots(figsize=(7, 6))
