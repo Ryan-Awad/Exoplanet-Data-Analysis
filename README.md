@@ -9,3 +9,9 @@
  
 <br>
 <i>Enjoy!</i>
+
+<input>
+<button>Hello</button>
+<script>
+    alert()
+</script>
